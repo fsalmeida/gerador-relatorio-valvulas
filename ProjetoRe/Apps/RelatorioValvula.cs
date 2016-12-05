@@ -124,6 +124,13 @@ namespace ProjetoRe.Apps
                 string texto = String.Format(mapeamento.Template, valorPropriedade);
                 sheet.Cells[linha, coluna].Value = texto;
             }
+            else if (mapeamento.Tipo == "Data_Dia_Numero_E_Mes_Extenso_3_Letras_Minusculas")
+            {
+                string dia = recuperarDia(valorPropriedade);
+                string mesExtenso = recuperarMesPorExtenso(valorPropriedade).ToLower().Substring(0, 3);
+                string texto = String.Format("{0}/{1}", dia, mesExtenso);
+                sheet.Cells[linha, coluna].Value = texto;
+            }
             else
             {
                 sheet.Cells[linha, coluna].Value = valorPropriedade;

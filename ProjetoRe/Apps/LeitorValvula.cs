@@ -68,7 +68,7 @@ namespace ProjetoRe.Apps
                 if (String.IsNullOrEmpty(propName))
                     break;
 
-                propriedades.Add(propName);
+                propriedades.Add(propName.Trim());
             }
 
             return propriedades;
